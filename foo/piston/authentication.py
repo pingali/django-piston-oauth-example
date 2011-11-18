@@ -14,6 +14,7 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 
 from piston import forms
+import traceback 
 
 class NoAuthentication(object):
     """
@@ -162,7 +163,9 @@ def oauth_request_token(request):
         response = HttpResponse(token.to_string())
     except oauth.OAuthError, err:
         response = send_oauth_error(err)
-
+    except: 
+        traceback.print_exc() 
+        
     return response
 
 def oauth_auth_view(request, token, callback, params):

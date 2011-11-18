@@ -652,6 +652,10 @@ class OAuthSignatureMethod_HMAC_SHA1(OAuthSignatureMethod):
             hashed = hmac.new(key, raw, hashlib.sha1)
         except:
             import sha # Deprecated
+            # Without encoding python was throwing up error saying
+            # there are special characters in the raw data.
+            raw = raw.encode('ascii') 
+            key = key.encode('ascii') 
             hashed = hmac.new(key, raw, sha)
 
         # Calculate the digest base 64.

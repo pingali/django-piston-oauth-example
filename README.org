@@ -17,6 +17,18 @@ Finally I fetched /oauth_client.py/ from this example
 [[https://github.com/clemesha/django-piston-oauth-example]] to test your
 oauth authentication.
 
+* My Update 
+
+I am trying to extend the source with a full fleged example like that
+in clemesha. I like that Gorgios' implementation is relatively
+clean. This fork is raw and if you are planning to develop, I would
+recommend starting with
+[[https://github.com/glogiotatidis/django-piston-oauth-example][Gorgio's
+source]] until this code stabilizes 
+
+Also, I intend to eventually customize repo to use Aadhaar API for
+authorization.
+
 * Install
 
 1. git clone git://github.com/glogiotatidis/django-piston-oauth-example.git # to clone
